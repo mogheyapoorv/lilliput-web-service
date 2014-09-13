@@ -3,6 +3,9 @@
 *.a
 *.so
 
+#Ignore local dev.ini file
+dev.ini
+
 # Folders
 _obj
 _test
@@ -21,4 +24,3 @@ _testmain.go
 
 *.exe
 *.test
-*.prof
