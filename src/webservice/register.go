@@ -18,6 +18,7 @@ type RegisterService struct {
 	gorest.RestService `root:"/" consumes:"application/json" produce:"application/json"`
 
 	registerMachine gorest.EndPoint `method:"GET" path:"/register/{macId:string}"  output:"Servers"`
+	listMachine     gorest.EndPoint `method:"GET" path:"/list/" output:"[]Servers"`
 }
 
 var engine *xorm.Engine
@@ -129,4 +130,11 @@ func (serv RegisterService) RegisterMachine(macId string) Servers {
 		return *machine
 	}
 	return eServer
+}
+
+func (serv RegisterService) ListMachine() []Servers {
+	db := Orm()
+	var servers []Servers
+	db.Find(&servers)
+	return servers
 }
