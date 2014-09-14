@@ -8,4 +8,4 @@ depends:
 	go get github.com/pelletier/go-toml
 
 build:
-	go build -v -o lilliputservice launch/main.go
+	go build -v -o lilliputservice src/main.go

@@ -2,12 +2,12 @@ package main
 
 import (
 	"code.google.com/p/gorest"
-	"github.com/jabong/register"
+	"webservice"
 	"net/http"
 )
 
 func main() {
-	gorest.RegisterService(&register.RegisterService{})
+	gorest.RegisterService(&webservice.RegisterService{})
 	http.Handle("/", gorest.Handle())
 	http.ListenAndServe(":8787", nil)
 }
